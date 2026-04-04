@@ -32,4 +32,5 @@ public class Transaction {
     @NotBlank(message = "date is required")
     private String date;
 
+    private String notes;
 }
