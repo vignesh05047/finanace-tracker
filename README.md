@@ -112,48 +112,61 @@ All requests must include the X-Role header. Requests without it return 400 Bad 
 
 ## Request and Response Examples
 
+## Request and Response Examples
+
 ### Add Transaction
+```
 POST /api/transactions
 Headers: X-Role: ADMIN
-Content-Type: application/json
+         Content-Type: application/json
+
 {
-"type": "income",
-"userId": "u1",
-"role": "ADMIN",
-"amount": 5000,
-"category": "salary",
-"date": "2026-04-04"
+    "type": "income",
+    "userId": "u1",
+    "role": "ADMIN",
+    "amount": 5000,
+    "category": "salary",
+    "date": "2026-04-04"
 }
+
 Response: Transaction added successfully
+```
 
 ### Dashboard Response
+```
 GET /api/transactions/dashboard
 Headers: X-Role: ADMIN
+
 {
-"totalIncome": 5000.0,
-"totalExpense": 2000.0,
-"netBalance": 3000.0,
-"byCategory": {
-"salary": 5000.0,
-"food": 2000.0
-},
-"recentActivity": [...]
+    "totalIncome": 5000.0,
+    "totalExpense": 2000.0,
+    "netBalance": 3000.0,
+    "byCategory": {
+        "salary": 5000.0,
+        "food": 2000.0
+    },
+    "recentActivity": [...]
 }
+```
 
 ### Validation Error Response
+```
 {
-"status": 400,
-"error": "Validation failed",
-"fields": {
-"amount": "amount must be greater than zero",
-"category": "category is required"
+    "status": 400,
+    "error": "Validation failed",
+    "fields": {
+        "amount": "amount must be greater than zero",
+        "category": "category is required"
+    }
 }
-}
+```
 
 ### Access Denied Response
+```
 {
-"error": "VIEWER can only view data"
+    "error": "VIEWER can only view data"
 }
+```
 
 ---
 
