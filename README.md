@@ -25,24 +25,25 @@ Finance Tracker is a backend API that allows users to manage financial records b
 ---
 
 ## Project Structure
-
+```
 src/main/java/com/example/financetracker/
-├── config/
-│    └── RoleGuard.java          → Filter for role-based access control
-├── controller/
-│    ├── TransactionController.java
-│    └── UserController.java
-├── exception/
-│    └── GlobalExceptionHandler.java → Centralized error handling
-├── model/
-│    ├── Transaction.java
-│    └── User.java
-├── repository/
-│    ├── TransactionRepository.java
-│    └── UserRepository.java
-└── service/
-├── TransactionService.java
-└── UserService.java
+ ├── config/
+ │    └── RoleGuard.java
+ ├── controller/
+ │    ├── TransactionController.java
+ │    └── UserController.java
+ ├── exception/
+ │    └── GlobalExceptionHandler.java
+ ├── model/
+ │    ├── Transaction.java
+ │    └── User.java
+ ├── repository/
+ │    ├── TransactionRepository.java
+ │    └── UserRepository.java
+ └── service/
+      ├── TransactionService.java
+      └── UserService.java
+```
 ---
 
 ## How to Run
