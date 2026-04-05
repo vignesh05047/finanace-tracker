@@ -18,7 +18,7 @@ public class User {
     private String username;
 
     @Column(nullable = false)
-    private String password;   // plain text is fine for this assignment
+    private String password;   // plain text is fine
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

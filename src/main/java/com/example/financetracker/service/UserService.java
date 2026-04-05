@@ -54,7 +54,7 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    // Login (simple check — no JWT needed for this assignment)
+    // Login
     public String login(String username, String password) {
         Optional<User> optional = userRepository.findByUsername(username);
         if (optional.isEmpty()) return "User not found";
